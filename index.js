@@ -46,6 +46,9 @@ function createInput() {
     inputs.forEach((input) => {
       input.value = "";
     });
+    //clear answer
+    const answerElement = document.getElementById("answer-number");
+    answerElement.innerText = "";
   });
 
   document
