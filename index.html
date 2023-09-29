@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1987 to 2020</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  </head>
+  <body class="bg-gray-100 py-10">
+    <div class="max-w-4xl mx-auto p-6 bg-white rounded shadow-md">
+      <h1 class="text-2xl mb-6 font-semibold text-center">
+        Best Model 3years 1987 to 2020
+      </h1>
+      <h1 id="answer" class="text-center">
+        Prediction is :
+        <span id="answer-number" class="text-2xl text-yellow-500"></span>
+      </h1>
+      <div
+        class="flex space-x-4 mt-4 flex flex-row justify-center items-center"
+      >
+        <button
+          id="fillRandom"
+          type="button"
+          class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+        >
+          Fill with Random Numbers
+        </button>
+        <button
+          id="clearInputs"
+          type="button"
+          class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        >
+          Clear Inputs
+        </button>
+        <button
+          id="submit"
+          type="button"
+          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          ;
+        >
+          Submit
+        </button>
+      </div>
+      <form id="inputForm" class="mt-12">
+        <!-- The input rows will be dynamically added here -->
+      </form>
+      <div id="footer">
+        <p class="mt-12 text-center text-gray-400 text-xs">&copy;2023 Ki</p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
