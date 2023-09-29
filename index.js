@@ -87,7 +87,8 @@ function createInput() {
         const yearlyData = [];
         for (let i = 1; i <= 25; i++) {
           const inputValue = parseFloat(
-            document.getElementsByName(`year${year}_item${i}`)[0].value
+            document.getElementsByName(`year${year}_${features[i - 1]}`)[0]
+              .value
           );
           yearlyData.push(isNaN(inputValue) ? 0 : inputValue);
         }
