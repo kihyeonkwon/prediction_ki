@@ -40,10 +40,10 @@ function createInput() {
 
     for (let i = 1; i <= 25; i++) {
       const divElement = document.createElement("div");
-      divElement.className = "flex space-x-4 mb-2";
+      divElement.className = " grid grid-cols-1 sm:grid-cols-2 mb-2";
 
       const labelElement = document.createElement("label");
-      labelElement.className = "flex-none w-16";
+      labelElement.className = "flex-1  break-words";
       labelElement.innerText = features[i - 1];
 
       const inputElement = document.createElement("input");
