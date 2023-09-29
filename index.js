@@ -87,4 +87,4 @@ async function loadModel(input) {
 }
 
 createInput();
-console.log("v1.0.2");
+console.log("v1.0.3");
