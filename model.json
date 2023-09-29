@@ -128,7 +128,7 @@
   },
   "weightsManifest": [
     {
-      "paths": ["group1-shard1of1.bin"],
+      "paths": ["assets/group1-shard1of1.bin"],
       "weights": [
         { "name": "dense_4/kernel", "shape": [50, 1], "dtype": "float32" },
         { "name": "dense_4/bias", "shape": [1], "dtype": "float32" },
