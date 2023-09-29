@@ -74,7 +74,7 @@ function createInput() {
 }
 
 async function loadModel(input) {
-  const model = await tf.loadLayersModel("./model.json");
+  const model = await tf.loadLayersModel("model.json");
 
   // Convert inputData to a tf.Tensor
   const inputTensor = tf.tensor(input);
@@ -87,4 +87,4 @@ async function loadModel(input) {
 }
 
 createInput();
-console.log("v1.0.1");
+console.log("v1.0.2");
