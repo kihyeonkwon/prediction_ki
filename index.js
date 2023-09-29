@@ -1,3 +1,31 @@
+const features = [
+  "Total_Current_Oper_nor",
+  "Total_Construction_nor",
+  "Total_Purchase_nor",
+  "Air_Trans_Current_Exp_nor",
+  "Air_Trans_Construction_nor",
+  "Air_Trans_Purchase_nor",
+  "Total_Highways_Current_Exp_nor",
+  "Total_Highways_Construct_Exp_nor",
+  "Total_Highways_Purchase_Exp_nor",
+  "Parking_Current_Exp_nor",
+  "Parking_Construction_nor",
+  "Parking_Purchase_nor",
+  "Water_Trans_Current_Exp_nor",
+  "Water_Trans_Construct_Exp_nor",
+  "Water_Trans_Purchase_Exp_nor",
+  "Trans_Util_Current_Exp_nor",
+  "Trans_Util_Construct_Exp_nor",
+  "Trans_Util_Purchase_Exp_nor",
+  "white_r",
+  "black_r",
+  "asian_r",
+  "hispanic_r",
+  "median_income",
+  "high_edu_ratio",
+  "pop_den",
+];
+
 function createInput() {
   const formElement = document.getElementById("inputForm");
 
@@ -16,13 +44,13 @@ function createInput() {
 
       const labelElement = document.createElement("label");
       labelElement.className = "flex-none w-16";
-      labelElement.innerText = `Item ${i}:`;
+      labelElement.innerText = features[i - 1];
 
       const inputElement = document.createElement("input");
       inputElement.type = "text";
       inputElement.placeholder = `Value`;
       inputElement.className = "flex-1 p-2 border rounded";
-      inputElement.name = `year${year}_item${i}`;
+      inputElement.name = `year${year}_${features[i - 1]}`;
 
       divElement.appendChild(labelElement);
       divElement.appendChild(inputElement);
@@ -36,7 +64,7 @@ function createInput() {
   document.getElementById("fillRandom").addEventListener("click", function () {
     const inputs = formElement.querySelectorAll("input");
     inputs.forEach((input) => {
-      input.value = (Math.random() * 2 - 1).toFixed(2);
+      input.value = (Math.random() * 10 - 5).toFixed(2);
     });
   });
 
