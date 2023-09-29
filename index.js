@@ -1,28 +1,3 @@
-function animateWidth() {
-  const progressBar = document.getElementById("progressBar");
-  const duration = 1000; // 3 seconds
-  const start = performance.now();
-  let currentWidth = 1;
-
-  // Show the progress bar container
-  document.getElementById("progressContainer").classList.remove("hidden");
-
-  function step(timestamp) {
-    const elapsed = timestamp - start;
-    currentWidth = (elapsed / duration) * 100;
-    progressBar.style.width = `${Math.min(currentWidth, 100)}%`;
-
-    if (currentWidth < 100) {
-      requestAnimationFrame(step);
-    } else {
-      // Hide the progress bar after it completes
-      document.getElementById("progressContainer").classList.add("hidden");
-    }
-  }
-
-  requestAnimationFrame(step);
-}
-
 function createInput() {
   const formElement = document.getElementById("inputForm");
 
@@ -74,36 +49,30 @@ function createInput() {
     //clear answer
     const answerElement = document.getElementById("answer-number");
     answerElement.innerText = "";
-    document.getElementById("answer").classList.add("hidden");
   });
 
   document
     .getElementById("submit")
     .addEventListener("click", async function () {
-      animateWidth();
-
-      setTimeout(async () => {
-        const input = [];
-        for (let year = 1; year <= 3; year++) {
-          const yearlyData = [];
-          for (let i = 1; i <= 25; i++) {
-            const inputValue = parseFloat(
-              document.getElementsByName(`year${year}_item${i}`)[0].value
-            );
-            yearlyData.push(isNaN(inputValue) ? 0 : inputValue);
-          }
-          input.push(yearlyData);
+      const input = [];
+      for (let year = 1; year <= 3; year++) {
+        const yearlyData = [];
+        for (let i = 1; i <= 25; i++) {
+          const inputValue = parseFloat(
+            document.getElementsByName(`year${year}_item${i}`)[0].value
+          );
+          yearlyData.push(isNaN(inputValue) ? 0 : inputValue);
         }
+        input.push(yearlyData);
+      }
 
-        const result = await loadModel([input]);
+      console.log(input);
+      const result = await loadModel([input]);
 
-        // Show the result
-        const answerElement = document.getElementById("answer-number");
-        answerElement.innerText = `${result}`;
-
-        // Show the result container
-        document.getElementById("answer").classList.remove("hidden");
-      }, 3000); // Wait for the progress bar to complete
+      // show answer at top
+      const answerElement = document.getElementById("answer-number");
+      console.log(result);
+      answerElement.innerText = `${result}`;
     });
 }
 
