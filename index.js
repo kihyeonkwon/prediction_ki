@@ -32,7 +32,7 @@ function createInput() {
   for (let year = 1; year <= 3; year++) {
     // Create a section for each year
     const sectionElement = document.createElement("div");
-    sectionElement.className = "mb-8";
+    sectionElement.className = "mb-8 max-w-xl";
     const yearHeading = document.createElement("h2");
     yearHeading.className = "text-xl mb-4";
     yearHeading.innerText = `Year ${year}`;
